@@ -20,8 +20,14 @@ describe('./musicians endpoint', () => {
         expect(response.statusCode).toBe(200);
     })
     
+    test("Testing /musicians/:id", async () => {
+       
+        const response = await request(app).get("/musicians/:id");
+        const responseData = JSON.parse(response.text);
+        expect(response.statusCode).toBe(200);
+    })
 
-
+    
 
 
     
